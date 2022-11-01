@@ -19,7 +19,6 @@ const Categories = () => {
     }).catch((err) => {
         setErr(err)
         setIsLoading(true);
-
     });
   }, []);
 
@@ -35,8 +34,10 @@ const Categories = () => {
               {categories.map((category) => {
                   return (
                   <tr key={category.slug}>
-                    <td><Link to={`/categories/${category.slug}`} ><button>{category.slug}</button></Link></td>
-                    <td id="cat_des">{category.description}</td>
+                    <tbody>
+                      <td><Link to={`/categories/${category.slug}`} ><button>{category.slug}</button></Link></td>
+                      <td id="cat_des">{category.description}</td>
+                    </tbody>
                   </tr>)
                   })}
           </table>

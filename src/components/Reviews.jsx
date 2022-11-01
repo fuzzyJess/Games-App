@@ -17,8 +17,7 @@ const Reviews = () => {
         setErr(null)
     }).catch((err) => {
         setErr(err)
-
-
+        setIsLoading(true);
     });
   }, []);
 

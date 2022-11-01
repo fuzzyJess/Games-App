@@ -18,9 +18,13 @@ const Category = () => {
         setErr(null)
     }).catch((err) => {
         setErr(err)
+        setIsLoading(true);
     });
-}, []);
-    
+}, [category]);
+
+if (isLoading) return <p>Loading...</p>;
+if (err) return <p>{err}</p>;
+  
 
 
     return (
