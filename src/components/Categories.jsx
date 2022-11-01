@@ -31,16 +31,22 @@ const Categories = () => {
 //amend css to move buttons to the left of the category description...
   return (
     <>
-    <h2>Categories</h2>
+    <h2>Game categories</h2>
         <main>
-            {categories.map((category) => {
-                return (<Link to={`/categories/${category.slug}`} key={category.slug} ><div id="category_menu"><button>{category.slug}</button>
-                <p>{category.description}</p>
-                </div></Link>)
-                })}
+          
+          <table id="cat_table">
+              {categories.map((category) => {
+                  return (
+                  <tr>
+                    <td><Link to={`/categories/${category.slug}`} key={category.slug}><button>{category.slug}</button></Link></td>
+                    <td id="cat_des">{category.description}</td>
+                  </tr>)
+                  })}
+          </table>
         </main>
     </>
   )
 }
+
 
 export default Categories

@@ -25,6 +25,7 @@ const Category = () => {
 
     return (
         <main>
+            <p>Reviews with {category} as the category</p>
             <ul>
                 {gameCategory.map((review) => {
                     return (<li key={review.review_id}> <img

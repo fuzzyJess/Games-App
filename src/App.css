@@ -2,27 +2,50 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  list-style-type: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+li {
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+  padding-top: 10px;
+  margin: 10px;
+  border-radius: 15px;
 }
 
 img {
   height: 20vmin;
   border-radius: 15px;
+}
+
+main {
+  margin: auto;
+  width: 50%;
+}
+
+table {
+  max-width: 500px;
+  min-width: 300px;  
+  padding: 10px;
+  margin: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+  flex: 1;
+}
+
+#cat_des {
+  max-width: 400px;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+button {
+  width: 100%;
 }
