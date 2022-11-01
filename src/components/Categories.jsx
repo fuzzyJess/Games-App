@@ -33,12 +33,12 @@ const Categories = () => {
           <table id="cat_table">
               {categories.map((category) => {
                   return (
-                  <tr key={category.slug}>
-                    <tbody>
+                  <tbody>
+                    <tr key={category.slug}>
                       <td><Link to={`/categories/${category.slug}`} ><button>{category.slug}</button></Link></td>
                       <td id="cat_des">{category.description}</td>
-                    </tbody>
-                  </tr>)
+                    </tr>
+                  </tbody>)
                   })}
           </table>
         </main>
