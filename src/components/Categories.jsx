@@ -26,9 +26,6 @@ const Categories = () => {
   if (isLoading) return <p>Loading...</p>;
   if (err) return <p>{err}</p>;
 
-
-
-//amend css to move buttons to the left of the category description...
   return (
     <>
     <h2>Game categories</h2>
