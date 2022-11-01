@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 
 import * as api from '../Api';
 
@@ -32,11 +33,13 @@ const Reviews = () => {
           {reviews.map((review) => {
             return (
               <li key={review.review_id}>
-                <img
+                <Link to={`/reviews/${review.review_id}`} >
+                  <img
                   id={review.review_id}
                   alt={review.title}
                   src={review.review_img_url}
-                />
+                  />
+                </Link>
                 <p>
                   {review.title} <br />
                   {review.created_at} <br />
