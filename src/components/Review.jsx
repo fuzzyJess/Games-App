@@ -5,10 +5,37 @@ import * as api from '../Api';
 
 const Review = () => {
     const [review, setReview] = useState([]);
+    const [voteIncrement, setVoteIncrement] = useState(false);
+
     const [isLoading, setIsLoading] = useState(true);
     const [err, setErr] = useState(null);
 
     const { review_id } = useParams();
+
+    let isDecDisabled = true;
+    useEffect(() => {
+    }, [isDecDisabled])
+
+    const handleAddVote = () => {
+        if (voteIncrement) {
+            setVoteIncrement(false);
+            api.changeVotes(review_id, -1).then((votes) => {
+                }).catch((err) => {
+                    setErr(err)
+                    // if err then will remove vote from count being displayed
+                    setVoteIncrement(true)
+                })
+            }
+        else {
+            setVoteIncrement(true);
+            api.changeVotes(review_id, +1).then((votes) => {
+                }).catch((err) => {
+                    setErr(err)
+                    // if err then will remove vote from count being displayed
+                    setVoteIncrement(false)
+                })
+            }  
+    }
 
     useEffect(() => {
         setIsLoading(true)
@@ -25,18 +52,21 @@ const Review = () => {
     if (isLoading) return <p>Loading...</p>;
     if (err) return <p>{err}</p>;
       
+
     return (
         <>
             <main id="ind_review">
                 <h3>{review.title} review</h3>
-                <p>author - {review.owner}<br/>
-                game category - {review.category}<br/>
-                created on - {review.created_at.slice(0, 10)}
+                <p>author: {review.owner}<br/>
+                game category: {review.category}<br/>
+                created on: {review.created_at.slice(0, 10)}
                 </p>
                     <section id="rev_content">
                         <p>
                             {review.review_body}
                         </p>
+                        <button onClick={handleAddVote} className="vote" aria-label="vote">👍 {review.votes + voteIncrement}</button>
+                        
                     </section>
             </main>
         </>

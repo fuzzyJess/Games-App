@@ -19,3 +19,10 @@ export const fetchReview = (review_id) => {
 
     return res.data.review;})
 }
+
+// path to add in vote - takes review_id & vote variable to increment/decrement vote
+export const changeVotes = (review_id, vote) => {
+    return gameApi.patch(`/api/reviews/${review_id}`, {inc_votes: vote}).then((res) => {
+    
+    return res.data.updatedReview.votes;})
+}

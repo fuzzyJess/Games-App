@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 
 import * as api from '../Api';
 
@@ -32,14 +32,15 @@ if (err) return <p>{err}</p>;
             <p>Reviews with {category} as the category</p>
             <ul>
                 {gameCategory.map((review) => {
-                    return (<li key={review.review_id}> <img
+                    return (<li key={review.review_id}> <Link to={`/reviews/${review.review_id}`}><img
                         id={review.review_id}
                         alt={review.title}
                         src={review.review_img_url}
                       />
+                      </Link>
                       <p>
                         {review.title} <br />
-                        {review.created_at} <br />
+                        {review.created_at.slice(0, 10)} <br />
                         {review.owner}
                       </p></li>)
                 })}
