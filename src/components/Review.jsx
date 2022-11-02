@@ -29,14 +29,15 @@ const Review = () => {
         <>
             <main id="ind_review">
                 <h3>{review.title} review</h3>
-                <p>author - {review.owner}<br/>
-                game category - {review.category}<br/>
-                created on - {review.created_at.slice(0, 10)}
+                <p>author: {review.owner}<br/>
+                game category: {review.category}<br/>
+                created on: {review.created_at.slice(0, 10)}
                 </p>
                     <section id="rev_content">
                         <p>
                             {review.review_body}
                         </p>
+                        <div id="vote">🗳 {review.votes}</div>
                     </section>
             </main>
         </>
