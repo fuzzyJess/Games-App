@@ -37,7 +37,7 @@ const Review = () => {
                         <p>
                             {review.review_body}
                         </p>
-                        <div id="vote">🗳 {review.votes}</div>
+                        <div id="vote" aria-label="click to vote">🗳 {review.votes}</div>
                     </section>
             </main>
         </>
