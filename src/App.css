@@ -50,6 +50,10 @@ button {
   width: 100%;
 }
 
+.vote {
+  width: 10%;
+}
+
 #ind_review {
   border: 1px solid #dddddd;
   border-radius: 15px;
