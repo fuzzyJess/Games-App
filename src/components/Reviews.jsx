@@ -42,7 +42,7 @@ const Reviews = () => {
                 </Link>
                 <p>
                   {review.title} <br />
-                  {review.created_at} <br />
+                  {review.created_at.slice(0, 10)} <br />
                   {review.owner}
                 </p>
               </li>
