@@ -5,10 +5,29 @@ import * as api from '../Api';
 
 const Review = () => {
     const [review, setReview] = useState([]);
+    const [voteIncrement, setVoteIncrement] = useState(0);
+    const [voteDecrement, setVoteDecrement] = useState(0);
+
     const [isLoading, setIsLoading] = useState(true);
     const [err, setErr] = useState(null);
 
     const { review_id } = useParams();
+
+    const handleAddVote = () => {
+        setVoteIncrement((currCount) => currCount + 1);
+        api.changeVotes(review_id, 1).then((votes) => {
+            console.log(votes, "votes?")
+        }).catch((err) => {
+            console.log(err, "is there an error?")
+            setErr(err)
+            setVoteIncrement((currCount) => currCount - 1)
+        })
+    }
+
+    // const handleRemoveVote = () => {
+    //     setVoteCount((currCount) => currCount + 1);
+    //     api.changeVotes(review_id, voteDecrement)
+    // }
 
     useEffect(() => {
         setIsLoading(true)
@@ -37,7 +56,8 @@ const Review = () => {
                         <p>
                             {review.review_body}
                         </p>
-                        <div id="vote" aria-label="click to vote">🗳 {review.votes}</div>
+                        <button disabled={voteIncrement !== 0} onClick={handleAddVote} className="vote" aria-label="click to vote">🗳 {review.votes + voteIncrement}</button>
+                        <button className="vote" aria-label="unvote">❎</button>
                     </section>
             </main>
         </>
