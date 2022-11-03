@@ -26,3 +26,10 @@ export const changeVotes = (review_id, vote) => {
     
     return res.data.updatedReview.votes;})
 }
+
+export const fetchComments = (review_id) => {
+    
+    return gameApi.get(`/api/reviews/${review_id}/comments`).then((res) => {
+    
+    return res.data.comments;})
+}

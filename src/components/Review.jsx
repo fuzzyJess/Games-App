@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Comments from "./Comments";
 
 import * as api from '../Api';
 
@@ -54,8 +55,8 @@ const Review = () => {
       
 
     return (
-        <>
-            <main id="ind_review">
+        <main>
+                <section id="rev_card">
                 <h3>{review.title} review</h3>
                 <p>author: {review.owner}<br/>
                 game category: {review.category}<br/>
@@ -66,10 +67,10 @@ const Review = () => {
                             {review.review_body}
                         </p>
                         <button onClick={handleAddVote} className="vote" aria-label="vote">👍 {review.votes + voteIncrement}</button>
-                        
                     </section>
+                </section>
+                <Comments review_id={review.review_id}/>
             </main>
-        </>
     )
 }
 
