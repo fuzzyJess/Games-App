@@ -53,7 +53,16 @@ button {
   width: 10%;
 }
 
-#ind_review {
+#rev_card {
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#comments {
   border: 1px solid #dddddd;
   border-radius: 15px;
   text-align: left;
