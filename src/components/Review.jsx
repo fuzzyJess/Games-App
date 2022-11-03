@@ -69,7 +69,7 @@ const Review = () => {
                         <button onClick={handleAddVote} className="vote" aria-label="vote">👍 {review.votes + voteIncrement}</button>
                     </section>
                 </section>
-                <Comments review_id={review_id}/>
+                <Comments review_id={review.review_id}/>
             </main>
     )
 }
