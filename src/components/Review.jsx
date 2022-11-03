@@ -57,7 +57,7 @@ const Review = () => {
     return (
         <main>
                 <section id="rev_card">
-                <h3>{review.title} review</h3>
+                <h3>{review.title}</h3>
                 <p>author: {review.owner}<br/>
                 game category: {review.category}<br/>
                 created on: {review.created_at.slice(0, 10)}

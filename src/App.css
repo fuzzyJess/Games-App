@@ -29,7 +29,6 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
-  min-width: 500px;
   margin: 0 auto
 }
 
@@ -61,14 +60,6 @@ button {
   width: 10%;
 }
 
-#comments {
-  flex: 1;
-  border: 1px solid #dddddd;
-  border-radius: 15px;
-  margin: 10px;
-  min-width: 200px;
-}
-
 #rev_card {
   flex: 2;
   border: 1px solid #dddddd;
@@ -77,6 +68,14 @@ button {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
+}
+
+#comments {
+  flex: 1;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+  margin: 10px;
+  min-width: 200px;
 }
 
 #single_column {
