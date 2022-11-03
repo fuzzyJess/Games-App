@@ -55,7 +55,7 @@ const Review = () => {
       
 
     return (
-        <main id="ind_review">
+        <main>
                 <section id="rev_card">
                 <h3>{review.title} review</h3>
                 <p>author: {review.owner}<br/>
