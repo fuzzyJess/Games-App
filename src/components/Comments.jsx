@@ -29,7 +29,7 @@ const Comments = ({ review_id }) => {
 if (comments.length !== 0) {
     return (
     <section id="comments">
-      <CommentForm/>
+      <CommentForm review_id={review_id} setComments={setComments} />
       <h4>Comments</h4>
       <ul>
         {comments.map((comment) => {

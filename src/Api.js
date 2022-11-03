@@ -33,3 +33,15 @@ export const fetchComments = (review_id) => {
     
     return res.data.comments;})
 }
+
+export const postComment = (body, review_id, username) => {
+    const newComment = {
+        body: body,
+        username: username
+    }
+    return gameApi.post(`/api/reviews/${review_id}/comments`, newComment).then((res) => {
+
+           return res.data.newComment;
+    })
+
+}
