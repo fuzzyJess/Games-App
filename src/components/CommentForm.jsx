@@ -1,16 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, } from "react";
 
 import * as api from "../Api";
 
 const CommentForm = ({ review_id, setComments }) => {
 
-  const [addedComment, setAddedComment] = useState({});
+  const [addedComment, setAddedComment] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     api.postComment(addedComment, review_id, "tickle122").then((res) => {
         setComments((curComments) => {
+
+            console.log(curComments, "< curComments")
+            // resets text field
+            document.getElementById('form_body').value='';
+            //resets value held in addedComment
+            setAddedComment("");
+            // updates comments on page
             return [res, ...curComments]
+
         })
     })
   };
