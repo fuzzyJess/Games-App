@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import CommentForm from "./CommentForm";
 
 import * as api from "../Api";
 
@@ -28,6 +29,7 @@ const Comments = ({ review_id }) => {
 if (comments.length !== 0) {
     return (
     <section id="comments">
+      <CommentForm/>
       <h4>Comments</h4>
       <ul>
         {comments.map((comment) => {
@@ -46,6 +48,7 @@ if (comments.length !== 0) {
     return (
         <section id="comments">
             <h4>Be the first to comment</h4>
+      <CommentForm/>
         </section>
     )
 }
