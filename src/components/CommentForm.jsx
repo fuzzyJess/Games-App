@@ -12,7 +12,6 @@ const CommentForm = ({ review_id, setComments }) => {
     api.postComment(addedComment, review_id, "tickle122").then((res) => {
         setComments((curComments) => {
 
-            console.log(curComments, "< curComments")
             // resets text field
             document.getElementById('form_body').value='';
             //resets value held in addedComment
