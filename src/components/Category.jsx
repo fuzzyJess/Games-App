@@ -28,7 +28,7 @@ if (err) return <p>{err}</p>;
 
 
     return (
-        <main id="single_column">
+        <main>
             <p>Reviews with {category} as the category</p>
             <ul>
                 {gameCategory.map((review) => {

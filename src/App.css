@@ -2,25 +2,49 @@
   text-align: center;
 }
 
+nav {
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+  padding: 8px 16px; 
+}
+
+.link {
+  padding: 8px 16px;
+  text-decoration: none;
+  }
+
+nav .link:hover {
+  background-color: rgb(156, 164, 209);
+}
+
 ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
 }
 
 li {
-  text-align: left;
+  max-width: 250px;
+  width: 170px;
+  height: 220px;
   border-style: solid;
   border-width: 1px;
   border-color: grey;
-  border-radius: 15px;
+  border-radius: 10px;
   padding-top: 10px;
   padding-left: 10px;
+  padding-right: 10px;
   margin: 10px;
+  box-shadow: 0 10px 20px hsla(103, 7%, 40%, 0.555);
 }
 
 img {
-  height: 20vmin;
-  border-radius: 15px;
+  max-height: 100px;
+  max-width: 150px;
+  border-radius: 10px;
 }
 
 main {
@@ -60,10 +84,19 @@ button {
   width: 10%;
 }
 
+.review_card {
+  width: 170px;
+  height: 220px;
+}
+
+#comment_button {
+  width: 30px;
+}
+
 #rev_card {
   flex: 2;
   border: 1px solid #dddddd;
-  border-radius: 15px;
+  border-radius: 10px;
   text-align: left;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -73,12 +106,7 @@ button {
 #comments {
   flex: 1;
   border: 1px solid #dddddd;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 10px;
   min-width: 200px;
-}
-
-#single_column {
-  display: block;
-  width: 50%;
 }
