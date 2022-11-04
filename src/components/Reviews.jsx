@@ -27,12 +27,11 @@ const Reviews = () => {
 
   return (
     <>
-      <p>Game Reviews</p>
       <main id="reviews">
         <ul>
           {reviews.map((review) => {
             return (
-              <li key={review.review_id}>
+              <li className="review_card" key={review.review_id}>
                 <Link to={`/reviews/${review.review_id}`} >
                   <img
                   id={review.review_id}
