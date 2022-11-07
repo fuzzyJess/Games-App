@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  font-size: 14px;
+}
+
+h1 {
+  background-color: rgba(73, 168, 168, 0.507);
+  color: rgb(58, 66, 95);
+  font-size: 450%;
+  margin: 0;
 }
 
 nav {
@@ -22,8 +30,7 @@ ul {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  list-style-type: none;
-  padding: 0;
+  list-style-type: none;  
 }
 
 li {
@@ -39,11 +46,19 @@ li {
   padding-right: 10px;
   margin: 10px;
   box-shadow: 0 10px 20px hsla(103, 7%, 40%, 0.555);
+  width: 150px;
+  height: 230px;
+  font-size: 12px;
 }
 
-img {
+.thumbnail {
   max-height: 100px;
   max-width: 150px;
+  border-radius: 10px;
+}
+
+.review_img {
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -66,6 +81,15 @@ table {
   border-color: grey;
 }
 
+select {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#reviews {
+  margin-top: 10px;
+}
+
 #cat_des {
   max-width: 400px;
 }
@@ -80,21 +104,32 @@ button {
   width: 100%;
 }
 
-.vote {
-  width: 10%;
+#submit {
+  width: 50%;
 }
 
-.review_card {
-  width: 170px;
-  height: 270px;
+.vote {
+  width: 20px;
+}
+
+/* text box for comment form */
+#form_body {
+  width: 80%;
 }
 
 #comment_button {
-  width: 30px;
+  width: 100%;
+}
+
+.review_card {
+  width: 150px;
+  max-height: 230px;
+  font-size: 12px;
 }
 
 #rev_card {
   flex: 2;
+  min-width: 120px;
   border: 1px solid #dddddd;
   border-radius: 10px;
   text-align: left;
@@ -108,5 +143,5 @@ button {
   border: 1px solid #dddddd;
   border-radius: 10px;
   margin: 10px;
-  min-width: 200px;
+  min-width: 120px;
 }
