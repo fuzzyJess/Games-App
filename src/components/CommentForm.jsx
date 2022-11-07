@@ -33,18 +33,14 @@ const CommentForm = ({ review_id, setComments }) => {
   const isEmpty = addedComment.length === 0;
   return (
     <form onSubmit={handleSubmit}>
-      <fieldset>
-        <legend>Leave a comment</legend>
-
-        <label htmlFor="form_body">Enter your comment</label>
+        <label htmlFor="form_body">Enter a comment</label>
         <textarea onChange={handleOnchange} value={addedComment} id="form_body" type="text" />
         <p>
-          <button disabled={isEmpty} type="submit">
-            submit comment
-          </button>
+          <button disabled={isEmpty} type="submit" id="submit">
+            submit
+          </button> <br/>
           {isEmpty && <span>Please enter a comment</span>}
         </p>
-      </fieldset>
     </form>
   );
 };
