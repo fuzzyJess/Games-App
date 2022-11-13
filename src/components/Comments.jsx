@@ -3,7 +3,8 @@ import CommentForm from "./CommentForm";
 
 import * as api from "../Api";
 
-const Comments = ({ review_id }) => {
+const Comments = ({ review_id, user }) => {
+  console.log(user, "< user in comments")
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(null);
@@ -29,7 +30,7 @@ const Comments = ({ review_id }) => {
   
     return (
     <section id="comments">
-      <CommentForm review_id={review_id} setComments={setComments} />
+      <CommentForm review_id={review_id} setComments={setComments} user={user} />
       <h4>Comments</h4>
       <ul>
         {comments.map((comment) => {
@@ -38,6 +39,7 @@ const Comments = ({ review_id }) => {
               created on: {comment.created_at.slice(0, 10)} <br />
               author: {comment.author} <br />
               <p>{comment.body}</p>
+              
             </li>
           );
         })}

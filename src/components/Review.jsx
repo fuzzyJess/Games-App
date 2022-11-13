@@ -4,7 +4,8 @@ import Comments from "./Comments";
 
 import * as api from "../Api";
 
-const Review = () => {
+const Review = ({user}) => {
+  console.log(user, "< in review")
   const [review, setReview] = useState([]);
   const [voteIncrement, setVoteIncrement] = useState(false);
 
@@ -83,7 +84,7 @@ const Review = () => {
           </button>
         </section>
       </section>
-      <Comments review_id={review.review_id} />
+      <Comments review_id={review.review_id} user={user} />
     </main>
   );
 };
