@@ -25,6 +25,10 @@ nav .link:hover {
   background-color: rgb(156, 164, 209);
 }
 
+nav img {
+  height: 20px;
+}
+
 ul {
   display: flex;
   flex-direction: row;

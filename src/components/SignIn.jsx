@@ -2,9 +2,9 @@ import { useState, useEffect } from "react"
 
 import * as api from '../Api';
 
-const SignIn = () => {
+const SignIn = ({user, setUser}) => {
 
-    const [users, setUsers] = useState([]); 
+    const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [err, setErr] = useState(null);
 
@@ -29,12 +29,12 @@ return (
         <main>
             <ul>
             {users.map((user) => {
-                console.log(user)
                 return (
                 <li className="review_card" key={user.name}>
                 <img alt={user.name} src={user.avatar_url} className="thumbnail"/>
                 <p>
-                    {user.username} <br />
+                    {user.name} <br /><br />
+                    <button onClick={() => setUser(user)}>Sign in</button>
                 </p>
                 </li>   
                 )

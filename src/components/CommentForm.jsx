@@ -2,7 +2,7 @@ import { useState, } from "react";
 
 import * as api from "../Api";
 
-const CommentForm = ({ review_id, setComments }) => {
+const CommentForm = ({ review_id, setComments, user }) => {
 
   const [addedComment, setAddedComment] = useState("");
   const [err, setErr] = useState(null);
@@ -11,7 +11,7 @@ const CommentForm = ({ review_id, setComments }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    api.postComment(addedComment, review_id, "tickle122").then((res) => {
+    api.postComment(addedComment, review_id, user.username).then((res) => {
      
         setComments((curComments) => {
                      
