@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const gameApi = axios.create({baseURL: 'https://fuzzyjess-board-games.herokuapp.com'});
+export const gameApi = axios.create({baseURL: 'https://fierce-scarf-hare.cyclic.app/'});
 
 export const fetchReviews = (category, sort_by, order) => {
     return gameApi.get('/api/reviews', {params: {category, sort_by, order}}).then((res) => {
@@ -50,4 +50,11 @@ export const fetchUsers = () => {
     return gameApi.get(`/api/users`).then((res) => {
     
     return res.data.users;})
+}
+
+export const deleteComment = (comment_id) => {
+    
+    return gameApi.delete(`/api/comments/${comment_id}`).then((res) => {
+        
+    return res.data;})
 }
