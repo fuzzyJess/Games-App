@@ -55,8 +55,8 @@ const Review = ({user}) => {
       });
   }, [review_id]);
 
+  if (err) return <p>{err.response.data.msg}</p>;
   if (isLoading) return <p>Loading...</p>;
-  if (err) return <p>{err}</p>;
 
   return (
     <main>

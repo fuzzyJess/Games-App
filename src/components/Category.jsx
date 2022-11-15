@@ -25,8 +25,8 @@ const Category = () => {
       });
   }, [category]);
 
+  if (err) return <p>{err.response.data.msg}</p>;
   if (isLoading) return <p>Loading...</p>;
-  if (err) return <p>{err}</p>;
 
   return (
     <main>

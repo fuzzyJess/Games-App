@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 
 import * as api from '../Api';
 
-
 const Categories = () => {
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
