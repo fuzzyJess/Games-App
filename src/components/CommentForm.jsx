@@ -30,7 +30,10 @@ const CommentForm = ({ review_id, setComments, user }) => {
   }
 
   if (err) return <p>{err}</p>;
-  const isEmpty = addedComment.length === 0;
+  // when nothing has been added in the comment box button to submit comment is disabled
+  let isEmpty = addedComment.length === 0;
+  // when logged in as guest button to submit comment is disabled
+  isEmpty = user.username === 'guest';
     return (
     <form onSubmit={handleSubmit}>
         <label htmlFor="form_body">Enter a comment</label>
