@@ -11,7 +11,12 @@ import Category from './components/Category';
 import SignIn from './components/SignIn';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    username: 'guest',
+    name: 'Guest',
+    avatar_url:
+      'https://sysnative.nyc3.cdn.digitaloceanspaces.com/data/avatars/h/33/33931.jpg?1563048380',
+  });
 
   return (
 

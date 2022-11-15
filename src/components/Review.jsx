@@ -5,7 +5,6 @@ import Comments from "./Comments";
 import * as api from "../Api";
 
 const Review = ({user}) => {
-  console.log(user, "< in review")
   const [review, setReview] = useState([]);
   const [voteIncrement, setVoteIncrement] = useState(false);
 

@@ -26,7 +26,7 @@ nav .link:hover {
 }
 
 nav img {
-  height: 20px;
+  height: 18px;
 }
 
 ul {
@@ -129,6 +129,7 @@ button {
 #comment_button {
   width: 100%;
 }
+
 
 .review_card {
   width: 150px;

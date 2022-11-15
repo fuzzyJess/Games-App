@@ -4,8 +4,8 @@ import CommentForm from "./CommentForm";
 import * as api from "../Api";
 
 const Comments = ({ review_id, user }) => {
-  console.log(user, "< user in comments")
   const [comments, setComments] = useState([]);
+  const [deleteComment, setDeleteComment] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(null);
 
@@ -22,11 +22,17 @@ const Comments = ({ review_id, user }) => {
         setErr(err);
         setIsLoading(true);
       });
-  }, [review_id]);
+  }, [review_id, deleteComment]);
 
   if (isLoading) return <p>Loading...</p>;
   if (err) return <p>{err}</p>;
 
+  const handleDeleteComment = (comment_id) => {
+    api.deleteComment(comment_id)
+    .then((response) => {
+      setDeleteComment(response);
+    })
+  }
   
     return (
     <section id="comments">
@@ -39,7 +45,7 @@ const Comments = ({ review_id, user }) => {
               created on: {comment.created_at.slice(0, 10)} <br />
               author: {comment.author} <br />
               <p>{comment.body}</p>
-              
+              {(comment.author === user.username) ? <button onClick={() => handleDeleteComment(comment.comment_id)}>delete comment</button> : <div />}
             </li>
           );
         })}

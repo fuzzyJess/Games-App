@@ -31,7 +31,7 @@ const CommentForm = ({ review_id, setComments, user }) => {
 
   if (err) return <p>{err}</p>;
   const isEmpty = addedComment.length === 0;
-  return (
+    return (
     <form onSubmit={handleSubmit}>
         <label htmlFor="form_body">Enter a comment</label>
         <textarea onChange={handleOnchange} value={addedComment} id="form_body" type="text" />
@@ -43,6 +43,7 @@ const CommentForm = ({ review_id, setComments, user }) => {
         </p>
     </form>
   );
+  
 };
 
 export default CommentForm;
