@@ -9,6 +9,7 @@ import Review from './components/Review';
 import Categories from './components/Categories';
 import Category from './components/Category';
 import SignIn from './components/SignIn';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   const [user, setUser] = useState({
@@ -31,6 +32,7 @@ function App() {
           <Route path='/categories' element={<Categories />} />
           <Route path='/categories/:category' element={<Category />} />
           <Route path='/users' element={<SignIn user={user} setUser={setUser} />}/>
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
     </div>
   </BrowserRouter> 
