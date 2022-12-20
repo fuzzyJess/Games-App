@@ -4,7 +4,7 @@ This is the frontend for my Games app produced as one of the final Northcoders b
 
 ### Live build:
 
-- https://fuzzyjess-game-reviews.netlify.app/
+- https://fuzzyjess-game-reviews.netlify.app/api
 
 ### Backend repository:
 
@@ -13,7 +13,6 @@ This is the frontend for my Games app produced as one of the final Northcoders b
 ## To run locally
 
 - fork this repo
-- git clone https://github.com/fuzzyJess/Games-API
 ```npm install```
 ```npm start```
 
